@@ -14,6 +14,9 @@ export const siteConfig = {
     facebook: "https://www.facebook.com/profile.php?id=61573317345036",
     instagram: "https://www.instagram.com/miqenterprisesllc/",
   },
+  relatedSites: {
+    miqllcwiki: "https://miqllcwiki.com",
+  },
   address: {
     street: "15442 Ventura Blvd, Ste 201-1756",
     city: "Sherman Oaks",

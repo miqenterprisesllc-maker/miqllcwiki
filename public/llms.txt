@@ -27,3 +27,6 @@
 - Sitemap: https://miqenterprises.com/sitemap.xml
 - Robots: https://miqenterprises.com/robots.txt
 
+## Related domains
+- MIQ LLC Wiki: https://miqllcwiki.com
+

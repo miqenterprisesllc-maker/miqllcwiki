@@ -85,7 +85,7 @@ export function organizationSchema() {
       { "@type": "Country", name: "United States" },
       "Worldwide",
     ],
-    sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram],
+    sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram, siteConfig.relatedSites.miqllcwiki],
     knowsAbout: [
       "Wikipedia consulting",
       "Wikipedia page creation guidance",
