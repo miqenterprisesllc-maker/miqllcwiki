@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Header } from "@/components/Header";
 import { WhatsAppHelpButton } from "@/components/WhatsAppHelpButton";
 import { siteConfig } from "@/lib/site";
 import { jsonLdScript, organizationSchema, webSiteSchema } from "@/lib/seo";
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   publisher: siteConfig.name,
   title: {
-    default: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com) | Worldwide Wikipedia Consulting, SEO, AEO & GEO`,
-    template: `%s | ${siteConfig.name} (MIQ LLC Wiki)`,
+    default: `${siteConfig.name} | Worldwide Wikipedia Consulting, SEO, AEO & GEO`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
@@ -65,16 +66,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com)`,
+    title: `${siteConfig.name} | Worldwide Wikipedia Consulting & Editorial Guidance`,
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: "MIQ LLC Wiki (miqllcwiki.com)",
+    siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com)`,
+    title: `${siteConfig.name} | Worldwide Wikipedia Consulting & Editorial Guidance`,
     description: siteConfig.description,
   },
   robots: {
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${manrope.variable} ${sora.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-background text-foreground antialiased">
+        <GoogleAnalytics />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(organizationSchema())} />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(webSiteSchema())} />
         <Header />

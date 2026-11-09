@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { siteConfig, serviceCategories } from "@/lib/site";
+import { getBlogPosts } from "@/lib/blog";
+import { serviceCategories, siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -21,5 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly",
     priority: s.slug === "wikipedia-services" ? 0.95 : 0.9,
   }));
-  return [...routes, ...services];
+  const posts: MetadataRoute.Sitemap = getBlogPosts().map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: post.dateModified,
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+  return [...routes, ...services, ...posts];
 }

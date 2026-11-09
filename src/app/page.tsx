@@ -8,18 +8,19 @@ import { FAQ } from "@/components/FAQ";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
 export const metadata = buildMetadata({
-  title: "Wikipedia Consulting, SEO, AEO, GEO & Digital Services",
-  description: "MIQ Enterprises LLC provides Wikipedia consulting, Wikipedia page creation guidance, Wikipedia notability assessment, Wikipedia editing support, SEO, AEO, GEO, website development, branding, and business technology solutions for clients in the United States and worldwide.",
+  title: "Wikipedia Specialists & Consulting Services",
+  description: "MIQ LLC provides Wikipedia consulting, notability research, article preparation guidance, editorial support, and policy-aware Wikipedia-related services for clients in the USA, UK, and worldwide.",
   path: "/",
   keywords: [
     ...siteConfig.wikipediaKeywords,
+    "Wikipedia specialists",
+    "Wikipedia consulting services",
+    "Wikipedia notability research",
+    "Wikipedia article preparation",
+    "Wikipedia editorial guidance",
     "SEO",
     "AEO",
-    "Answer Engine Optimization",
     "GEO",
-    "Generative Engine Optimization",
-    "digital services",
-    "MIQ Enterprises",
   ],
 });
 
@@ -61,7 +62,7 @@ export default function Home() {
             <div>
               <p className="inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">International Digital Services & Technology Solutions</p>
               <h1 className="mt-5 font-display max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Wikipedia Consulting, AEO/GEO Visibility & Digital Growth</h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ Enterprises LLC delivers professional Wikipedia consulting, Wikipedia page creation guidance, notability assessment, SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), website development, branding, and business technology solutions for clients in the United States and worldwide.</p>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ LLC delivers professional Wikipedia consulting, Wikipedia page creation guidance, notability assessment, editorial support, and related digital services for clients in the United States, United Kingdom, and worldwide.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/contact" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy hover:bg-slate-100">Get a Free Consultation</Link>
                 <Link href="/services" className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Explore Our Services</Link>
@@ -92,7 +93,7 @@ export default function Home() {
             <Heading>International digital solutions with a premium standard</Heading>
           </div>
           <div className="text-lg leading-8 text-muted">
-            <p>MIQ Enterprises LLC is an international digital solutions company committed to helping businesses establish credibility, improve online visibility, and grow through innovative digital services.</p>
+            <p>MIQ LLC is an international digital solutions company committed to helping businesses establish credibility, improve online visibility, and grow through innovative digital services.</p>
             <p className="mt-4">We work with entrepreneurs, business owners, executives, organizations, startups, and established companies seeking a professional partner for strategy, design, marketing, and technology execution.</p>
           </div>
         </Container>

@@ -29,6 +29,7 @@ MIQ Enterprises LLC (MIQ LLC Wiki, miqllcwiki.com) helps businesses, executives,
 - Worldwide Wikipedia Services: https://miqllcwiki.com/services/wikipedia-services
 - SEO, AEO & GEO: https://miqllcwiki.com/services/seo-digital-marketing
 - About: https://miqllcwiki.com/about
+- Insights & Guides: https://miqllcwiki.com/blog
 - Contact: https://miqllcwiki.com/contact
 - Sitemap: https://miqllcwiki.com/sitemap.xml
 - Robots: https://miqllcwiki.com/robots.txt

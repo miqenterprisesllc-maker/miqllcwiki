@@ -1,6 +1,10 @@
 export const siteConfig = {
-  name: "MIQ Enterprises LLC",
-  shortName: "MIQ Enterprises",
+  /** Public-facing brand name. */
+  name: "MIQ LLC",
+  brandName: "MIQ LLC",
+  /** Legal entity name. */
+  legalName: "MIQ Enterprises LLC",
+  shortName: "MIQ LLC",
   /** Generic/brand name variations people may use to find this business. */
   genericNames: [
     "MIQ",
@@ -16,7 +20,7 @@ export const siteConfig = {
   tagline: "Your Vision. Our Digital Expertise.",
   headline: "Building Digital Authority. Empowering Business Growth.",
   description:
-    "MIQ Enterprises LLC (MIQ) is an international digital services and technology solutions company delivering professional Wikipedia consulting, Wikipedia page creation guidance, Wikipedia editing and notability research, SEO, AEO, GEO, digital marketing, website development, branding, reputation management, and business technology solutions for clients in the United States and worldwide.",
+    "MIQ LLC (legal entity: MIQ Enterprises LLC) is an international digital services and technology solutions company delivering professional Wikipedia consulting, Wikipedia page creation guidance, Wikipedia editing and notability research, SEO, AEO, GEO, digital marketing, website development, branding, reputation management, and business technology solutions for clients in the United States and worldwide.",
   url: "https://miqllcwiki.com",
   email: "miqenterprisesllc@gmail.com",
   phone: "+1 (914) 730-2443",

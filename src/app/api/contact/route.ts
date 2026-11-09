@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     if (message.length < 10 || message.length > 5000) return NextResponse.json({ error: "Please provide a message between 10 and 5000 characters." }, { status: 400 });
     // MVP: validated submission accepted. Integrate email/CRM/lead storage in production.
     console.info("MIQ contact inquiry", { name, email, phone, service, inquiryType, at: new Date().toISOString() });
-    return NextResponse.json({ ok: true, message: "Thank you for contacting MIQ Enterprises LLC. We have received your inquiry and will respond as soon as possible." });
+    return NextResponse.json({ ok: true, message: "Thank you for contacting MIQ LLC. We have received your inquiry and will respond as soon as possible." });
   } catch {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }

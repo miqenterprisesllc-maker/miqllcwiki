@@ -65,6 +65,7 @@ export function organizationSchema() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     alternateName: siteConfig.genericNames,
     url: siteConfig.url,
     logo: absoluteUrl("/favicon.svg"),
@@ -137,7 +138,7 @@ export function webSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${siteConfig.url}/#website`,
-    name: siteConfig.name,
+    name: `${siteConfig.name} (miqllcwiki.com)`,
     alternateName: siteConfig.genericNames,
     url: siteConfig.url,
     description: siteConfig.description,
@@ -241,5 +242,54 @@ export function webPageSchema({
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#organization` },
     inLanguage: "en-US",
+  };
+}
+
+export function articleSchema({
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  type = "BlogPosting",
+  keywords,
+  faq,
+}: {
+  headline: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+  type?: "Article" | "BlogPosting";
+  keywords?: string[];
+  faq?: { q: string; a: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    "@id": `${absoluteUrl(path)}#article`,
+    headline,
+    description,
+    url: absoluteUrl(path),
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${absoluteUrl(path)}#webpage` },
+    author: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name },
+    publisher: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name, logo: { "@type": "ImageObject", url: absoluteUrl("/favicon.svg") } },
+    datePublished,
+    dateModified: dateModified || datePublished,
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    ...(keywords?.length ? { keywords } : {}),
+    ...(faq?.length
+      ? {
+          hasPart: {
+            "@type": "FAQPage",
+            mainEntity: faq.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          },
+        }
+      : {}),
   };
 }

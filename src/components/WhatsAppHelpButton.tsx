@@ -14,6 +14,7 @@ function clamp(value: number, min: number, max: number) {
 
 export function WhatsAppHelpButton() {
   const [position, setPosition] = useState<{ x: number; y: number } | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const dragRef = useRef<{
     pointerId: number;
     startX: number;
@@ -73,6 +74,7 @@ export function WhatsAppHelpButton() {
     const dy = event.clientY - drag.startY;
     if (!drag.moved && Math.hypot(dx, dy) > DRAG_THRESHOLD) {
       drag.moved = true;
+      setIsDragging(true);
     }
     if (!drag.moved) return;
     const maxX = Math.max(MARGIN, window.innerWidth - BUTTON_SIZE - MARGIN);
@@ -93,6 +95,7 @@ export function WhatsAppHelpButton() {
       openWhatsApp();
     }
     dragRef.current = null;
+    setIsDragging(false);
   };
 
   if (!position) return null;
@@ -107,6 +110,7 @@ export function WhatsAppHelpButton() {
       onPointerUp={onPointerUp}
       onPointerCancel={() => {
         dragRef.current = null;
+        setIsDragging(false);
       }}
       className="fixed z-50 flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 ring-1 ring-white/20 transition-[transform,box-shadow,background-color] hover:bg-[#1fb257] hover:shadow-xl active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
       style={{
@@ -115,11 +119,11 @@ export function WhatsAppHelpButton() {
         width: BUTTON_SIZE,
         height: BUTTON_SIZE,
         touchAction: "none",
-        cursor: dragRef.current?.moved ? "grabbing" : "grab",
+        cursor: isDragging ? "grabbing" : "grab",
       }}
     >
       <MessageCircle aria-hidden="true" size={26} />
-      <span className="sr-only">Chat with MIQ Enterprises on WhatsApp</span>
+      <span className="sr-only">Chat with MIQ LLC on WhatsApp</span>
     </button>
   );
 }

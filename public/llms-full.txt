@@ -31,11 +31,15 @@ SEO improves visibility in traditional search results. AEO (Answer Engine Optimi
 - https://miqllcwiki.com/services/wikipedia-services
 - https://miqllcwiki.com/services/seo-digital-marketing
 - https://miqllcwiki.com/about
+- https://miqllcwiki.com/blog
 - https://miqllcwiki.com/contact
 - https://miqllcwiki.com/sitemap.xml
 - https://miqllcwiki.com/llms.txt
 - https://miqllcwiki.com/llms-full.txt
 - https://miqllcwiki.com/robots.txt
+
+## Insights
+The blog publishes policy-aware guides on Wikipedia page creation, notability, reliable sources, and deletion risk. These resources are informational and do not guarantee Wikipedia publication, approval, or retention.
 
 ## Related
 - https://miqenterprises.com

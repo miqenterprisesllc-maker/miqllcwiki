@@ -23,7 +23,10 @@ function InstagramIcon({ size = 16 }: { size?: number }) {
 
 export function Footer() {
   const [year, setYear] = useState(2026);
-  useEffect(() => setYear(new Date().getFullYear()), []);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setYear(new Date().getFullYear()));
+    return () => cancelAnimationFrame(id);
+  }, []);
   return (
     <footer className="border-t border-white/10 bg-navy text-white">
       <div className="container-tight grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
@@ -73,7 +76,7 @@ export function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="container-tight flex flex-col gap-2 py-5 text-xs text-white/55 md:flex-row md:items-center md:justify-between">
-          <p>© {year} {siteConfig.name}. All rights reserved.</p>
+          <p>© {year} {siteConfig.legalName}. All rights reserved. {siteConfig.name} is a brand of {siteConfig.legalName}.</p>
           <p>Professional digital services. Outcomes depend on scope, platform policies, and external factors.</p>
         </div>
       </div>

@@ -21,15 +21,15 @@ function InstagramIcon({ size = 18 }: { size?: number }) {
 }
 
 export const metadata = buildMetadata({
-  title: "Contact",
-  description: "Contact MIQ Enterprises LLC for a free consultation on Wikipedia consulting, notability assessment, SEO, AEO, GEO, website development, or digital services. Serving the United States and worldwide.",
+  title: `Contact ${siteConfig.name} – Wikipedia Consulting Services`,
+  description: `Contact ${siteConfig.name} (${siteConfig.legalName}) for Wikipedia consulting, notability research, article preparation guidance, and editorial support. Serving clients in the USA, UK, and worldwide.`,
   path: "/contact",
-  keywords: ["contact MIQ Enterprises", "Wikipedia consulting consultation", "Wikipedia notability assessment", "SEO AEO GEO consultation", ...siteConfig.wikipediaKeywords.slice(0, 6)],
+  keywords: [`contact ${siteConfig.name}`, "Wikipedia consulting services", "Wikipedia notability research", "Wikipedia article preparation", "Wikipedia editorial guidance", ...siteConfig.wikipediaKeywords.slice(0, 6)],
 });
 
 export default function ContactPage() {
   const schemas = [
-    webPageSchema({ name: "Contact MIQ Enterprises LLC", description: metadata.description || "", path: "/contact", type: "ContactPage" }),
+    webPageSchema({ name: `Contact ${siteConfig.name}`, description: metadata.description || "", path: "/contact", type: "ContactPage" }),
     breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
   ];
   return (

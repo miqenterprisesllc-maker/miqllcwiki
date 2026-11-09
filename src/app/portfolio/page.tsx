@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Portfolio",
-  description: "MIQ Enterprises LLC portfolio categories including Wikipedia consulting, Wikipedia notability assessment, SEO, AEO, GEO, website development, branding, and digital marketing. Demonstration items are clearly labeled when applicable.",
+  description: "MIQ LLC portfolio categories including Wikipedia consulting, Wikipedia notability assessment, SEO, AEO, GEO, website development, branding, and digital marketing. Demonstration items are clearly labeled when applicable.",
   path: "/portfolio",
   keywords: ["Wikipedia consulting portfolio", "Wikipedia notability assessment process", "SEO AEO GEO", ...siteConfig.wikipediaKeywords.slice(0, 6)],
 });
@@ -43,7 +43,7 @@ export default function PortfolioPage() {
               </article>
             ))}
           </div>
-          <div className="mt-10 rounded-3xl bg-navy p-8 text-white"><h2 className="font-display text-2xl font-semibold">Have a project in mind?</h2><p className="mt-2 text-white/72">Contact MIQ Enterprises LLC for a consultation and a service recommendation tailored to your goals.</p><Link href="/contact" className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy">Start a Conversation</Link></div>
+          <div className="mt-10 rounded-3xl bg-navy p-8 text-white"><h2 className="font-display text-2xl font-semibold">Have a project in mind?</h2><p className="mt-2 text-white/72">Contact MIQ LLC for a consultation and a service recommendation tailored to your goals.</p><Link href="/contact" className="mt-5 inline-flex rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy">Start a Conversation</Link></div>
         </Container>
       </Section>
     </>

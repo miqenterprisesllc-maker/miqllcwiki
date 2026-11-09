@@ -3,10 +3,10 @@ import { Container, Eyebrow, Heading, Section } from "@/components/Section";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
-  title: "About Us",
-  description: "Learn about MIQ Enterprises LLC, our mission, values, and client-focused approach to Wikipedia consulting, SEO, AEO, GEO, and international digital services.",
+  title: `About ${siteConfig.name} – Wikipedia Consulting Specialists`,
+  description: `Learn about ${siteConfig.name}, a Wikipedia consulting specialist brand operated by ${siteConfig.legalName}, providing notability research, article preparation guidance, editorial support, and responsible digital services for USA, UK, and worldwide clients.`,
   path: "/about",
-  keywords: ["about MIQ Enterprises", "Wikipedia consulting company", "SEO AEO GEO agency", ...siteConfig.wikipediaKeywords.slice(0, 8)],
+  keywords: [`about ${siteConfig.name}`, "Wikipedia consulting specialists", "Wikipedia notability research", "Wikipedia editorial guidance", ...siteConfig.wikipediaKeywords.slice(0, 8)],
 });
 
 const values = [
@@ -19,7 +19,7 @@ const values = [
 
 export default function AboutPage() {
   const schemas = [
-    webPageSchema({ name: "About MIQ Enterprises LLC", description: metadata.description || "", path: "/about", type: "AboutPage" }),
+    webPageSchema({ name: `About ${siteConfig.name}`, description: metadata.description || "", path: "/about", type: "AboutPage" }),
     breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
   ];
   return (
