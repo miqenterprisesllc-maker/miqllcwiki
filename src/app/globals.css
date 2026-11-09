@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #142033;
+  --navy: #0b1b33;
+  --navy-2: #10284d;
+  --charcoal: #1f2937;
+  --muted: #5b677a;
+  --border: rgba(16, 40, 77, 0.12);
+  --gold: #c8a24a;
+  --electric: #3b82f6;
+  --surface: #f6f8fb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-navy-2: var(--navy-2);
+  --color-charcoal: var(--charcoal);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-gold: var(--gold);
+  --color-electric: var(--electric);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-sora);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+::selection { background: rgba(59, 130, 246, 0.22); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 2px;
+}
+.container-tight { margin-inline: auto; width: min(1120px, calc(100% - 2rem)); }
+.section-pad { padding-block: 5rem; }
+@media (min-width: 768px) { .section-pad { padding-block: 6.5rem; } }
+.glass {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.hero-grid {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(59,130,246,.22), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(200,162,74,.18), transparent 22%),
+    linear-gradient(180deg, #081427 0%, #0b1b33 55%, #10284d 100%);
+}
+.grid-lines {
+  background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
