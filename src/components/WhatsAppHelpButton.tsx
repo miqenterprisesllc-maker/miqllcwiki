@@ -29,7 +29,10 @@ export function WhatsAppHelpButton() {
         const maxX = Math.max(MARGIN, window.innerWidth - BUTTON_SIZE - MARGIN);
         const maxY = Math.max(MARGIN, window.innerHeight - BUTTON_SIZE - MARGIN);
         if (!current) {
-          return { x: maxX, y: maxY };
+          return {
+            x: maxX,
+            y: clamp((window.innerHeight - BUTTON_SIZE) / 2, MARGIN, maxY),
+          };
         }
         return {
           x: clamp(current.x, MARGIN, maxX),
