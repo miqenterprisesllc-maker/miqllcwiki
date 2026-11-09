@@ -1,11 +1,12 @@
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata, jsonLdScript, webPageSchema } from "@/lib/seo";
 import { Container, Eyebrow, Heading, Section } from "@/components/Section";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "About Us",
-  description: "Learn about MIQ Enterprises LLC, our mission, values, and client-focused approach to international digital services and technology solutions.",
+  description: "Learn about MIQ Enterprises LLC, our mission, values, and client-focused approach to Wikipedia consulting, SEO, AEO, GEO, and international digital services.",
   path: "/about",
+  keywords: ["about MIQ Enterprises", "Wikipedia consulting company", "SEO AEO GEO agency", ...siteConfig.wikipediaKeywords.slice(0, 8)],
 });
 
 const values = [
@@ -17,12 +18,19 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const schemas = [
+    webPageSchema({ name: "About MIQ Enterprises LLC", description: metadata.description || "", path: "/about", type: "AboutPage" }),
+    breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
+  ];
   return (
     <>
+      {schemas.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(schema)} />
+      ))}
       <section className="hero-grid text-white"><div className="grid-lines"><Container className="py-20 md:py-24"><Eyebrow><span className="text-sky-300">About {siteConfig.name}</span></Eyebrow><h1 className="font-display max-w-4xl text-4xl font-semibold md:text-5xl">A client-focused digital services company serving the US and worldwide</h1><p className="mt-5 max-w-2xl text-lg text-white/78">{siteConfig.headline}</p></Container></div></section>
       <Section>
         <Container className="grid gap-10 lg:grid-cols-2">
-          <div><Eyebrow>Overview</Eyebrow><Heading>Who we are</Heading><p className="mt-4 leading-7 text-muted">MIQ Enterprises LLC is an international digital services and technology solutions company. We help entrepreneurs, executives, organizations, startups, and established businesses strengthen credibility, improve visibility, and build effective digital systems.</p><p className="mt-4 leading-7 text-muted">Our services span Wikipedia consulting, SEO and digital marketing, website development, online reputation management, branding and creative solutions, and business technology consulting. We focus on practical, professional outcomes and clear communication.</p></div>
+          <div><Eyebrow>Overview</Eyebrow><Heading>Who we are</Heading><p className="mt-4 leading-7 text-muted">MIQ Enterprises LLC is an international digital services and technology solutions company. We help entrepreneurs, executives, organizations, startups, and established businesses strengthen credibility, improve visibility, and build effective digital systems.</p><p className="mt-4 leading-7 text-muted">Our services span Wikipedia consulting (including notability assessment, citation research, policy-aware page guidance, and responsible editing support), SEO/AEO/GEO and digital marketing, website development, online reputation management, branding and creative solutions, and business technology consulting. We focus on practical, professional outcomes and clear communication.</p></div>
           <div className="rounded-3xl border border-border bg-surface p-8"><Eyebrow>Mission & Vision</Eyebrow><h3 className="font-display text-xl font-semibold text-navy">Mission</h3><p className="mt-2 text-muted">To help clients build trusted digital authority and achieve sustainable growth through professional, innovative, and ethical digital solutions.</p><h3 className="mt-6 font-display text-xl font-semibold text-navy">Vision</h3><p className="mt-2 text-muted">To be a globally trusted partner for businesses seeking premium digital services, modern technology adoption, and credible online presence.</p></div>
         </Container>
       </Section>

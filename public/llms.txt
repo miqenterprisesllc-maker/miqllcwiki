@@ -1,0 +1,29 @@
+# MIQ Enterprises LLC
+
+> MIQ Enterprises LLC is an international digital services and technology solutions company providing worldwide Wikipedia consulting and digital growth services for the United States and international clients.
+
+## About
+- Name: MIQ Enterprises LLC
+- Website: https://miqenterprises.com
+- Email: info@miqenterprises.com
+- Phone/WhatsApp: +1 (914) 730-2443
+- Address: 15442 Ventura Blvd, Ste 201-1756, Sherman Oaks, CA 91403, USA
+- Service area: United States and Worldwide
+
+## Services
+- Worldwide Wikipedia consulting: Wikipedia notability assessment, independent reliable source research, citation research, neutral drafting guidance, Wikipedia article writing guidance, Wikipedia editing support, Articles for Creation (AfC) process guidance, conflict-of-interest/paid-contribution disclosure guidance, and Wikipedia page maintenance recommendations for company, brand, and biography subjects. MIQ Enterprises LLC does not guarantee Wikipedia publication, approval, or retention.
+- SEO, AEO (Answer Engine Optimization), and GEO (Generative Engine Optimization): technical SEO, content strategy, search intent, entity clarity, structured data guidance, and digital marketing.
+- Website development: business websites, WordPress, e-commerce, landing pages, redesign, and maintenance.
+- Online reputation management: ethical brand visibility and credibility strategy.
+- Branding and creative solutions: identity, design, and marketing assets.
+- Business and technology solutions: automation, AI integration guidance, lead generation, and digital consulting.
+
+## Key pages
+- Home: https://miqenterprises.com/
+- Services: https://miqenterprises.com/services
+- Worldwide Wikipedia Services: https://miqenterprises.com/services/wikipedia-services
+- SEO, AEO & GEO: https://miqenterprises.com/services/seo-digital-marketing
+- Contact: https://miqenterprises.com/contact
+- Sitemap: https://miqenterprises.com/sitemap.xml
+- Robots: https://miqenterprises.com/robots.txt
+

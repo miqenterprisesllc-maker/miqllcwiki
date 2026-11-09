@@ -1,15 +1,26 @@
 import Link from "next/link";
 import { ArrowRight, BarChart3, Globe2, Layers3, ShieldCheck, Sparkles, Workflow } from "lucide-react";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata, faqSchema, jsonLdScript, webPageSchema } from "@/lib/seo";
 import { serviceCategories, siteConfig } from "@/lib/site";
 import { Container, Eyebrow, Heading, Section } from "@/components/Section";
 import { ContactForm } from "@/components/ContactForm";
+import { FAQ } from "@/components/FAQ";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
 export const metadata = buildMetadata({
-  title: "International Digital Services & Technology Solutions",
-  description: "MIQ Enterprises LLC delivers professional Wikipedia consulting, digital marketing, website development, branding, and business technology solutions for clients in the United States and worldwide.",
+  title: "Wikipedia Consulting, SEO, AEO, GEO & Digital Services",
+  description: "MIQ Enterprises LLC provides Wikipedia consulting, Wikipedia page creation guidance, Wikipedia notability assessment, Wikipedia editing support, SEO, AEO, GEO, website development, branding, and business technology solutions for clients in the United States and worldwide.",
   path: "/",
+  keywords: [
+    ...siteConfig.wikipediaKeywords,
+    "SEO",
+    "AEO",
+    "Answer Engine Optimization",
+    "GEO",
+    "Generative Engine Optimization",
+    "digital services",
+    "MIQ Enterprises",
+  ],
 });
 
 const pillars = [
@@ -18,16 +29,39 @@ const pillars = [
   { icon: Sparkles, title: "Premium execution", text: "Modern design, strategic thinking, and technology-driven implementation." },
 ];
 
+const homeFaqs = [
+  {
+    q: "What Wikipedia services does MIQ Enterprises provide?",
+    a: "MIQ Enterprises LLC provides Wikipedia consulting services including Wikipedia notability assessment, citation and reliable source research, Wikipedia article writing guidance, neutral draft planning, Wikipedia editing support, Articles for Creation (AfC) process guidance, conflict-of-interest disclosure guidance, and Wikipedia page maintenance recommendations.",
+  },
+  {
+    q: "What are AEO and GEO?",
+    a: "AEO (Answer Engine Optimization) structures content so answer engines can extract clear, direct responses. GEO (Generative Engine Optimization) improves entity clarity, topical authority, and trustworthy signals so generative AI systems can understand and cite content accurately. MIQ Enterprises applies both alongside strong SEO fundamentals.",
+  },
+  {
+    q: "Does MIQ Enterprises guarantee Wikipedia publication or #1 rankings?",
+    a: "No. MIQ Enterprises LLC does not guarantee Wikipedia publication, approval, retention, rankings, or AI citations. Wikipedia decisions are made by independent editors, and search/AI systems control their own results. We focus on ethical, research-driven, best-practice guidance.",
+  },
+];
+
 export default function Home() {
+  const schemas = [
+    webPageSchema({ name: metadata.title?.toString() || siteConfig.name, description: siteConfig.description, path: "/" }),
+    breadcrumbSchema([{ name: "Home", path: "/" }]),
+    faqSchema(homeFaqs),
+  ];
   return (
     <>
+      {schemas.map((schema, i) => (
+        <script key={i} type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(schema)} />
+      ))}
       <section className="hero-grid overflow-hidden text-white">
         <div className="grid-lines">
           <Container className="grid gap-10 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28">
             <div>
               <p className="inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">International Digital Services & Technology Solutions</p>
-              <h1 className="mt-5 font-display max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Transform Your Business. Elevate Your Digital Presence.</h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ Enterprises LLC delivers professional Wikipedia consulting, digital marketing, website development, branding, and business technology solutions to help individuals and organizations succeed in the digital world.</p>
+              <h1 className="mt-5 font-display max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Wikipedia Consulting, AEO/GEO Visibility & Digital Growth</h1>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ Enterprises LLC delivers professional Wikipedia consulting, Wikipedia page creation guidance, notability assessment, SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), website development, branding, and business technology solutions for clients in the United States and worldwide.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/contact" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy hover:bg-slate-100">Get a Free Consultation</Link>
                 <Link href="/services" className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Explore Our Services</Link>
@@ -117,12 +151,23 @@ export default function Home() {
         </Container>
       </Section>
 
+      <Section>
+        <Container className="grid gap-10 lg:grid-cols-[.9fr_1.1fr]">
+          <div>
+            <Eyebrow>FAQ</Eyebrow>
+            <Heading>Common questions about Wikipedia consulting, AEO & GEO</Heading>
+            <p className="mt-4 text-muted">Direct answers to common questions about our Wikipedia services and modern search visibility approach.</p>
+          </div>
+          <FAQ items={homeFaqs} />
+        </Container>
+      </Section>
+
       <Section className="bg-navy text-white">
         <Container className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div>
             <Eyebrow><span className="text-gold">Insights</span></Eyebrow>
             <h2 className="font-display text-3xl font-semibold">Subscribe for practical digital insights</h2>
-            <p className="mt-3 text-white/72">Receive updates when MIQ Enterprises publishes resources on digital growth, visibility, and technology.</p>
+            <p className="mt-3 text-white/72">Receive updates when MIQ Enterprises publishes resources on Wikipedia consulting, AEO, GEO, visibility, and technology.</p>
           </div>
           <div><NewsletterForm /></div>
         </Container>
