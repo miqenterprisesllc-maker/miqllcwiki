@@ -3,6 +3,7 @@ import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { WhatsAppHelpButton } from "@/components/WhatsAppHelpButton";
 import { siteConfig } from "@/lib/site";
 import { jsonLdScript, organizationSchema, webSiteSchema } from "@/lib/seo";
 
@@ -16,9 +17,24 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+const verification = {
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : {}),
+  ...(process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION
+    ? { yandex: process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION }
+    : {}),
+  ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+    ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+    : {}),
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  referrer: "origin-when-cross-origin",
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   title: {
     default: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com) | Worldwide Wikipedia Consulting, SEO, AEO & GEO`,
     template: `%s | ${siteConfig.name} (MIQ LLC Wiki)`,
@@ -72,9 +88,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
-    : {}),
+  ...(Object.keys(verification).length ? { verification } : {}),
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -93,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppHelpButton />
       </body>
     </html>
   );

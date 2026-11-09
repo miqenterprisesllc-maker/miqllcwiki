@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { breadcrumbSchema, buildMetadata, jsonLdScript, webPageSchema } from "@/lib/seo";
+import { breadcrumbSchema, buildMetadata, itemListSchema, jsonLdScript, webPageSchema } from "@/lib/seo";
 import { serviceCategories, siteConfig } from "@/lib/site";
 import { Container, Eyebrow, Section } from "@/components/Section";
 
@@ -24,6 +24,14 @@ export default function ServicesPage() {
   const schemas = [
     webPageSchema({ name: "Services", description: metadata.description || "", path: "/services", type: "CollectionPage" }),
     breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]),
+    itemListSchema(
+      serviceCategories.map((service) => ({
+        name: service.title,
+        path: `/services/${service.slug}`,
+        description: service.description,
+      })),
+      "MIQ Enterprises services",
+    ),
   ];
   return (
     <>
