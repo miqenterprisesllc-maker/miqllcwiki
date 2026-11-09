@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.name,
-    short_name: "MIQ",
+    name: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com)`,
+    short_name: "miqllcwiki",
     description: siteConfig.description,
     start_url: "/",
     display: "standalone",

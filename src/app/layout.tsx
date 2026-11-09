@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting, SEO, AEO & GEO Services`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com) | Worldwide Wikipedia Consulting, SEO, AEO & GEO`,
+    template: `%s | ${siteConfig.name} (MIQ LLC Wiki)`,
   },
   description: siteConfig.description,
   keywords: [
@@ -49,16 +49,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting & Digital Services`,
+    title: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com)`,
     description: siteConfig.description,
     url: siteConfig.url,
-    siteName: siteConfig.name,
+    siteName: "MIQ LLC Wiki (miqllcwiki.com)",
     locale: siteConfig.locale,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting & Digital Services`,
+    title: `${siteConfig.name} | MIQ LLC Wiki (miqllcwiki.com)`,
     description: siteConfig.description,
   },
   robots: {
