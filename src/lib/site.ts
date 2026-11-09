@@ -1,12 +1,24 @@
 export const siteConfig = {
   name: "MIQ Enterprises LLC",
   shortName: "MIQ Enterprises",
+  /** Generic/brand name variations people may use to find this business. */
+  genericNames: [
+    "MIQ",
+    "MIQ LLC",
+    "MIQ Enterprises",
+    "MIQ Enterprises LLC",
+    "MIQ LLC Wiki",
+    "miqllcwiki",
+    "miqllcwiki.com",
+    "MIQ digital services",
+    "MIQ Wikipedia consulting",
+  ],
   tagline: "Your Vision. Our Digital Expertise.",
   headline: "Building Digital Authority. Empowering Business Growth.",
   description:
-    "MIQ Enterprises LLC is an international digital services and technology solutions company delivering professional Wikipedia consulting, Wikipedia page creation guidance, Wikipedia editing and notability research, digital marketing, website development, branding, reputation management, and business technology solutions for clients in the United States and worldwide.",
-  url: "https://miqenterprises.com",
-  email: "info@miqenterprises.com",
+    "MIQ Enterprises LLC (MIQ) is an international digital services and technology solutions company delivering professional Wikipedia consulting, Wikipedia page creation guidance, Wikipedia editing and notability research, SEO, AEO, GEO, digital marketing, website development, branding, reputation management, and business technology solutions for clients in the United States and worldwide.",
+  url: "https://miqllcwiki.com",
+  email: "miqenterprisesllc@gmail.com",
   phone: "+1 (914) 730-2443",
   phoneHref: "tel:+19147302443",
   whatsapp: "https://wa.me/19147302443",
@@ -15,7 +27,7 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/miqenterprisesllc/",
   },
   relatedSites: {
-    miqllcwiki: "https://miqllcwiki.com",
+    miqenterprises: "https://miqenterprises.com",
   },
   address: {
     street: "15442 Ventura Blvd, Ste 201-1756",

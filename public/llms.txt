@@ -1,11 +1,12 @@
 # MIQ Enterprises LLC
 
-> MIQ Enterprises LLC is an international digital services and technology solutions company providing worldwide Wikipedia consulting and digital growth services for the United States and international clients.
+> MIQ Enterprises LLC (also known as MIQ, MIQ LLC, MIQ Enterprises, MIQ LLC Wiki, or miqllcwiki.com) is an international digital services and technology solutions company providing worldwide Wikipedia consulting and digital growth services for the United States and international clients.
 
 ## About
 - Name: MIQ Enterprises LLC
-- Website: https://miqenterprises.com
-- Email: info@miqenterprises.com
+- Generic/brand names: MIQ, MIQ LLC, MIQ Enterprises, MIQ Enterprises LLC, MIQ LLC Wiki, miqllcwiki, miqllcwiki.com
+- Website: https://miqllcwiki.com
+- Email: miqenterprisesllc@gmail.com
 - Phone/WhatsApp: +1 (914) 730-2443
 - Address: 15442 Ventura Blvd, Ste 201-1756, Sherman Oaks, CA 91403, USA
 - Service area: United States and Worldwide
@@ -19,14 +20,14 @@
 - Business and technology solutions: automation, AI integration guidance, lead generation, and digital consulting.
 
 ## Key pages
-- Home: https://miqenterprises.com/
-- Services: https://miqenterprises.com/services
-- Worldwide Wikipedia Services: https://miqenterprises.com/services/wikipedia-services
-- SEO, AEO & GEO: https://miqenterprises.com/services/seo-digital-marketing
-- Contact: https://miqenterprises.com/contact
-- Sitemap: https://miqenterprises.com/sitemap.xml
-- Robots: https://miqenterprises.com/robots.txt
+- Home: https://miqllcwiki.com/
+- Services: https://miqllcwiki.com/services
+- Worldwide Wikipedia Services: https://miqllcwiki.com/services/wikipedia-services
+- SEO, AEO & GEO: https://miqllcwiki.com/services/seo-digital-marketing
+- Contact: https://miqllcwiki.com/contact
+- Sitemap: https://miqllcwiki.com/sitemap.xml
+- Robots: https://miqllcwiki.com/robots.txt
 
 ## Related domains
-- MIQ LLC Wiki: https://miqllcwiki.com
+- MIQ Enterprises: https://miqenterprises.com
 

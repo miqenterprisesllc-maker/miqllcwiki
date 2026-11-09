@@ -20,11 +20,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
   title: {
-    default: `${siteConfig.name} | Worldwide Wikipedia Consulting, SEO, AEO & GEO Services`,
+    default: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting, SEO, AEO & GEO Services`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
+    ...siteConfig.genericNames,
     "worldwide Wikipedia consulting",
     "international Wikipedia consultant",
     "Wikipedia page creation service",
@@ -39,7 +40,6 @@ export const metadata: Metadata = {
     "digital marketing",
     "website development",
     "online reputation management",
-    "MIQ Enterprises",
   ],
   alternates: {
     canonical: siteConfig.url,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${siteConfig.name} | Worldwide Wikipedia Consulting & Digital Services`,
+    title: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting & Digital Services`,
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Worldwide Wikipedia Consulting & Digital Services`,
+    title: `${siteConfig.name} (MIQ) | Worldwide Wikipedia Consulting & Digital Services`,
     description: siteConfig.description,
   },
   robots: {
@@ -72,6 +72,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
