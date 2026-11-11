@@ -62,18 +62,22 @@ export function jsonLdScript(data: unknown) {
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService"],
+    "@type": ["Organization", "ProfessionalService", "LocalBusiness"],
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     legalName: siteConfig.legalName,
     alternateName: siteConfig.genericNames,
     url: siteConfig.url,
-    logo: absoluteUrl("/favicon.svg"),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/favicon.svg"),
+    },
     image: absoluteUrl("/opengraph-image"),
     description: siteConfig.description,
     slogan: siteConfig.tagline,
     email: siteConfig.email,
     telephone: siteConfig.phone,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: siteConfig.address.street,
@@ -87,6 +91,7 @@ export function organizationSchema() {
       "Worldwide",
     ],
     sameAs: [siteConfig.socials.facebook, siteConfig.socials.instagram, siteConfig.relatedSites.miqenterprises].filter(Boolean),
+    knowsLanguage: ["en"],
     knowsAbout: [
       "Wikipedia consulting",
       "Wikipedia page creation guidance",
@@ -144,6 +149,14 @@ export function webSiteSchema() {
     description: siteConfig.description,
     publisher: { "@id": `${siteConfig.url}/#organization` },
     inLanguage: "en-US",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.url}/blog?search={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
