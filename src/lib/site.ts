@@ -27,7 +27,7 @@ export const siteConfig = {
   phoneHref: "tel:+19147302443",
   whatsapp: "https://wa.me/19147302443",
   socials: {
-    facebook: "https://www.facebook.com/profile.php?id=61573317345036",
+    facebook: "https://www.facebook.com/profile.php?id=61596560276574",
     instagram: "https://www.instagram.com/miqenterprisesllc/",
   },
   relatedSites: {
