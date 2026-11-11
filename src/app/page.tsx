@@ -8,16 +8,19 @@ import { FAQ } from "@/components/FAQ";
 import { NewsletterForm } from "@/components/NewsletterForm";
 
 export const metadata = buildMetadata({
-  title: "Wikipedia Specialists & Consulting Services",
-  description: "MIQ LLC provides Wikipedia consulting, notability research, article preparation guidance, editorial support, and policy-aware Wikipedia-related services for clients in the USA, UK, and worldwide.",
+  title: "Wikipedia Page Creation Service & Consulting | MIQ LLC",
+  description: "MIQ LLC is a worldwide Wikipedia page creation service and consulting firm. We provide Wikipedia notability assessment, independent source research, neutral article drafting guidance, Wikipedia editing support, and policy-aware page maintenance for companies and individuals in the USA and worldwide.",
   path: "/",
   keywords: [
-    ...siteConfig.wikipediaKeywords,
-    "Wikipedia specialists",
+    "Wikipedia page creation service",
     "Wikipedia consulting services",
-    "Wikipedia notability research",
-    "Wikipedia article preparation",
-    "Wikipedia editorial guidance",
+    "create a Wikipedia page",
+    "Wikipedia consultant",
+    "hire a Wikipedia editor",
+    "Wikipedia notability assessment",
+    "Wikipedia editing services",
+    "Wikipedia page for company",
+    ...siteConfig.wikipediaKeywords,
     "SEO",
     "AEO",
     "GEO",
@@ -61,8 +64,8 @@ export default function Home() {
           <Container className="grid gap-10 py-20 md:grid-cols-[1.1fr_.9fr] md:py-28">
             <div>
               <p className="inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">International Digital Services & Technology Solutions</p>
-              <h1 className="mt-5 font-display max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Wikipedia Consulting, AEO/GEO Visibility & Digital Growth</h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ LLC delivers professional Wikipedia consulting, Wikipedia page creation guidance, notability assessment, editorial support, and related digital services for clients in the United States, United Kingdom, and worldwide.</p>
+              <h1 className="mt-5 font-display max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">Wikipedia Page Creation Service, Consulting & Digital Growth</h1>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/78">MIQ LLC is a worldwide Wikipedia page creation service and consulting company. We help eligible clients with Wikipedia notability assessment, independent source research, neutral article drafting guidance, Wikipedia editing support, and responsible page maintenance in the United States and worldwide.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link href="/contact" className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy hover:bg-slate-100">Get a Free Consultation</Link>
                 <Link href="/services" className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Explore Our Services</Link>

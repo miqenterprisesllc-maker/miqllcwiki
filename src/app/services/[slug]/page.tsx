@@ -8,6 +8,22 @@ import { Container, Eyebrow, Heading, Section } from "@/components/Section";
 import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 
+function howToSchema(service: { title: string; description: string; slug: string; process: { title: string; text: string }[] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to get started with ${service.title}`,
+    description: service.description,
+    totalTime: "P14D",
+    step: service.process.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.title,
+      text: step.text,
+    })),
+  };
+}
+
 export function generateStaticParams() {
   return serviceCategories.map((s) => ({ slug: s.slug }));
 }
@@ -39,6 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       { name: service.title, path },
     ]),
     faqSchema(service.faqs),
+    ...(service.slug === "wikipedia-services" ? [howToSchema(service)] : []),
   ];
   return (
     <>
