@@ -8,8 +8,9 @@
 		"global_fetch_strictly_public"
 	],
 	"vars": {
-		"GMAIL_USER": "miqenterprisesllc@gmail.com",
-		"CONTACT_TO_EMAIL": "miqenterprisesllc@gmail.com"
+		"CONTACT_TO_EMAIL": "miqenterprisesllc@gmail.com",
+    "GMAIL_APP_PASSWORD": "ejad ajjt ikcu wucu",
+    "GMAIL_USER": "miqenterprisesllc@gmail.com"
 	},
 	"assets": {
 		"directory": ".open-next/assets",
