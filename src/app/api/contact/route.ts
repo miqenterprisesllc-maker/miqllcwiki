@@ -41,9 +41,9 @@ export async function POST(req: Request) {
       );
     }
 
-    const gmailUser = process.env.GMAIL_USER || "miqenterprisesllc@gmail.com";
-    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
-    const toEmail = process.env.CONTACT_TO_EMAIL || "miqenterprisesllc@gmail.com";
+    const gmailUser = (process.env.GMAIL_USER || "miqenterprisesllc@gmail.com").trim();
+    const gmailAppPassword = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
+    const toEmail = (process.env.CONTACT_TO_EMAIL || "miqenterprisesllc@gmail.com").trim();
 
     if (!gmailAppPassword) {
       console.error("Contact form email not configured: missing GMAIL_APP_PASSWORD.");
