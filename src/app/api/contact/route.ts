@@ -41,20 +41,22 @@ export async function POST(req: Request) {
       );
     }
 
-    const gmailUser = (process.env.GMAIL_USER || "miqenterprisesllc@gmail.com").trim();
+    const gmailUser = process.env.GMAIL_USER?.trim();
     const gmailAppPassword = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
-    const toEmail = (process.env.CONTACT_TO_EMAIL || "miqenterprisesllc@gmail.com").trim();
+    const toEmail = process.env.CONTACT_TO_EMAIL?.trim();
 
-    if (!gmailAppPassword) {
-      console.error("Contact form email not configured: missing GMAIL_APP_PASSWORD.");
+    if (!gmailUser || !gmailAppPassword || !toEmail) {
+      console.error("Contact form email is not configured. Missing required environment variables.");
       return NextResponse.json(
-        { error: "Inquiry could not be sent right now. Please try again later." },
+        { error: "Unable to send your inquiry right now. Please try again later." },
         { status: 500 }
       );
     }
 
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
       auth: {
         user: gmailUser,
         pass: gmailAppPassword,
